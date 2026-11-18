@@ -1,0 +1,11 @@
+Terapias Cary V11 – PWA-Testversion
+
+Diese Version basiert auf V10 und kann nach Veröffentlichung über HTTPS auf iPhone und Windows installiert werden.
+
+WICHTIG: Daten werden weiterhin lokal im jeweiligen Browser gespeichert. Automatische Synchronisierung zwischen iPhone und Windows ist in V11 NOCH NICHT aktiviert. Dafür folgt eine gesicherte Supabase-Anbindung mit Benutzeranmeldung.
+
+GitHub: neues Repository terapias-cary; Dateien aus diesem Ordner in das Repository laden. Für GitHub Pages im kostenlosen Tarif muss das Repository öffentlich sein. KEINE privaten Therapieeinträge, Passwörter oder geheimen Schlüssel in das Repository hochladen.
+
+Vor dem Wechsel auf V11 in V10 unbedingt JSON-Sicherung exportieren. V11 kann diese wieder importieren.
+
+Auf dem iPhone Safari öffnen, Teilen > Zum Home-Bildschirm. Auf Windows Edge/Chrome > App installieren.
