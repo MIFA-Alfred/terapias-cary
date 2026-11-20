@@ -1,104 +1,167 @@
-<!doctype html><html lang="es"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Terapias Cary · V12</title><style>
+<!doctype html><html lang="es"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Terapias Cary · V13</title><style>
 :root{font-family:Arial,sans-serif;color:#24394a;background:#f4f7f9}*{box-sizing:border-box}body{margin:0}.wrap{max-width:1200px;margin:auto;padding:16px}header{display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap}h1{color:#205b7a;font-size:23px;margin:4px 0}small{color:#617585}.saldo{display:flex;flex-direction:column;align-items:flex-end;gap:3px;margin:0;text-align:right;white-space:nowrap}.saldo span{font-size:12px;color:#617585}.saldo strong{font-size:28px;color:#166b55}.toolbar{display:flex;gap:8px;flex-wrap:wrap;margin:12px 0}button{cursor:pointer;border:1px solid #b9cbd7;border-radius:8px;background:#fff;color:#245672;padding:10px 13px;font-weight:600}button.primary{background:#24678b;color:#fff;border-color:#24678b}button:active{transform:scale(.99)}select,input{border:1px solid #b8cad6;border-radius:8px;padding:11px;font-size:16px;background:#fff;width:100%}label{display:grid;gap:5px;color:#415f71;font-size:13px}section{background:#fff;border:1px solid #dce6eb;border-radius:10px;margin:12px 0;overflow:hidden}.filters{padding:13px;display:flex;gap:10px;align-items:end;flex-wrap:wrap}.filters label{min-width:145px}.tablewrap{overflow-x:auto}table{width:100%;border-collapse:collapse;font-size:13px;min-width:850px}th{background:#d8e7f2;color:#1c4a66;text-align:left;padding:10px 7px;white-space:nowrap}td{padding:10px 7px;border-bottom:1px solid #e6edf1;white-space:nowrap}tbody tr:nth-child(even){background:#f7fafc}.num{text-align:right;font-variant-numeric:tabular-nums}.balance{font-weight:bold;color:#176e56}.plus{color:#16835d;font-weight:bold}.minus{color:#a84c35;font-weight:bold}.small{padding:5px 8px;font-size:12px}.muted{color:#6b7f8d}.mobile-list{display:none}.entry{padding:13px;border-bottom:1px solid #e0e8ee}.entry-top,.entry-bottom{display:flex;justify-content:space-between;gap:10px;align-items:center}.entry-top{font-weight:bold}.entry-bottom{margin-top:9px}.entry small{display:block;margin-top:5px}.entry .balance{font-size:16px}.modal{display:none;position:fixed;inset:0;background:#09233a9c;z-index:4;align-items:center;justify-content:center;padding:12px}.modal.show{display:flex}.dialog{background:#fff;border-radius:13px;width:min(500px,100%);max-height:94dvh;overflow:auto;padding:18px}.dialog h2{margin:0 0 15px;font-size:21px}.fields{display:grid;grid-template-columns:1fr 1fr;gap:12px}.wide{grid-column:1/-1}.actions{display:flex;justify-content:flex-end;gap:8px;margin-top:18px}.hidden{display:none!important}.note{padding:12px;font-size:12px;color:#667c8b}.footer-tools{margin:16px 0}.footer-tools summary{cursor:pointer;color:#36627c}.footer-tools .toolbar{margin-top:10px}@media(max-width:700px){.wrap{padding:10px}.saldo{position:static;box-shadow:none}.saldo strong{font-size:25px}header{align-items:flex-start}header h1{font-size:20px}.toolbar .primary{width:100%;font-size:17px;padding:14px}.filters{display:grid;grid-template-columns:1fr 1fr}.filters label{min-width:0}.tablewrap{display:none}.mobile-list{display:block}.fields{grid-template-columns:1fr}.wide{grid-column:auto}.dialog{padding:15px}.actions button{flex:1;padding:13px}}@media print{.toolbar,.footer-tools,.modal,.filters,.entry button,td:last-child,th:last-child{display:none!important}.wrap{max-width:none}.tablewrap{display:block}.mobile-list{display:none}.saldo{position:static}table{min-width:0;font-size:11px}}
 @media(max-width:700px){.wrap{padding:10px 8px}.entry{padding:15px 12px}.entry-top{align-items:center;gap:8px}.entry-top .balance{text-align:right;white-space:nowrap}.entry-bottom{align-items:center}.entry-bottom button{min-height:44px;min-width:76px}.filters{grid-template-columns:1fr 1fr}.filters select{min-height:44px}.saldo strong{font-size:23px}.dialog{max-height:calc(100dvh - 20px)}.dialog input,.dialog select{min-height:46px}.actions button{min-height:46px}.footer-tools button{min-height:44px}}@media(max-width:380px){header h1{font-size:18px}.saldo strong{font-size:21px}.entry-top{font-size:14px}.entry .balance{font-size:14px}}
-</style><link rel="manifest" href="./manifest.webmanifest"><meta name="theme-color" content="#205b7a"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-title" content="Terapias Cary"><link rel="apple-touch-icon" href="./icon-192.png"><style>#syncbox{max-width:1200px;margin:12px auto;padding:14px;border:1px solid #cadce8;background:white;border-radius:12px;font:14px Arial;color:#25465a}#syncbox .syncrow{display:flex;flex-wrap:wrap;gap:8px;align-items:center;margin:8px 0}#syncbox input{width:auto;min-width:190px;flex:1}#syncbox button{padding:9px 12px}#syncstatus{font-weight:bold}#syncbox details{margin-top:10px}#syncbox summary{cursor:pointer}</style></head><body><div id="syncbox"><strong>☁ Terapias Cary V12 · Synchronisation</strong><div id="syncstatus" style="margin:8px 0">Nicht verbunden – lokale Daten bleiben erhalten.</div><div class="syncrow"><input id="sbkey" type="text" autocomplete="off" placeholder="Supabase Publishable Key (sb_publishable_…)"><button id="sbSave">Schlüssel lokal speichern</button></div><div class="syncrow"><input id="sbemail" type="email" autocomplete="username" placeholder="E-Mail des gemeinsamen Kontos"><input id="sbpassword" type="password" autocomplete="current-password" placeholder="Passwort"><button id="sbLogin">Anmelden</button><button id="sbLogout">Abmelden</button></div><div class="syncrow"><button id="sbPull">Cloud-Daten laden</button><button id="sbUpload">Lokale Daten erstmals in Cloud übertragen</button><button id="sbSync">Jetzt synchronisieren</button></div><small>Vor der ersten Übertragung bitte über «Exportar JSON» eine Sicherung erstellen. Auf dem zweiten Gerät zuerst anmelden und «Cloud-Daten laden» wählen. Niemals einen Secret Key eingeben.</small></div><main class="wrap"><header><div><h1>Terapias Cary</h1><small>Registro de sesiones · Versión 11</small></div><div class="saldo"><span>Saldo a favor <small id="periodLabel"></small></span><strong id="balance">—</strong></div></header>
+</style><link rel="manifest" href="./manifest.webmanifest"><meta name="theme-color" content="#205b7a"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-title" content="Terapias Cary"><link rel="apple-touch-icon" href="./icon-192.png"><style>#syncbox{max-width:1200px;margin:12px auto;padding:14px;border:1px solid #cadce8;background:white;border-radius:12px;font:14px Arial;color:#25465a}#syncbox .syncrow{display:flex;flex-wrap:wrap;gap:8px;align-items:center;margin:8px 0}#syncbox input{width:auto;min-width:190px;flex:1}#syncbox button{padding:9px 12px}#syncstatus{font-weight:bold}#syncbox details{margin-top:10px}#syncbox summary{cursor:pointer}</style><style>.month-head{display:flex;justify-content:space-between;gap:16px;align-items:center;padding:18px;flex-wrap:wrap}.month-head h2{margin:0 0 6px;color:#205b7a;font-size:21px}.month-balance strong{font-size:22px;color:#166b55}.month-controls{display:flex;align-items:end;gap:10px;padding:0 18px 16px;flex-wrap:wrap}.month-controls label{min-width:140px}.month-tablewrap{overflow-x:auto}.month-table{min-width:760px;font-size:12px}.month-table td,.month-table th{padding:8px 6px}.month-summary{padding:14px 18px;font-weight:bold;color:#205b7a}@media(max-width:700px){.month-head{padding:10px}.month-controls{padding:10px}.month-tablewrap{overflow-x:auto}.month-table{min-width:760px}}@media print{#syncbox,.toolbar,.footer-tools,.month-controls,#mainSection{display:none!important}#monthSection{display:block!important;border:0}.month-tablewrap{overflow:visible}.month-table{min-width:0;width:100%;font-size:9px}.month-table td,.month-table th{padding:5px 3px}.wrap{padding:0}.month-head{padding:8px 0}.month-summary{padding:8px 0}}</style></head><body><div id="syncbox"><strong>☁ Terapias Cary V13 · Synchronisation</strong><div id="syncstatus" style="margin:8px 0">Nicht verbunden – lokale Daten bleiben erhalten.</div><div class="syncrow"><input id="sbkey" type="text" autocomplete="off" placeholder="Supabase Publishable Key (sb_publishable_…)"><button id="sbSave">Schlüssel lokal speichern</button></div><div class="syncrow"><input id="sbemail" type="email" autocomplete="username" placeholder="E-Mail des gemeinsamen Kontos"><input id="sbpassword" type="password" autocomplete="current-password" placeholder="Passwort"><button id="sbLogin">Anmelden</button><button id="sbLogout">Abmelden</button><label style="display:flex;align-items:center;gap:5px;font-size:12px"><input id="sbRemember" type="checkbox" style="width:auto;min-width:0;flex:none"> Anmeldung auf diesem Gerät merken</label></div><div class="syncrow"><button id="sbPull">Cloud-Daten laden</button><button id="sbUpload">Lokale Daten erstmals in Cloud übertragen</button><button id="sbSync">Jetzt synchronisieren</button></div><small>Vor der ersten Übertragung bitte über «Exportar JSON» eine Sicherung erstellen. Auf dem zweiten Gerät zuerst anmelden und «Cloud-Daten laden» wählen. Niemals einen Secret Key eingeben. Auf gemeinsam genutzten Geräten die Anmeldung nicht speichern.</small></div><main class="wrap"><header><div><h1>Terapias Cary</h1><small>Registro de sesiones · Versión 13</small></div><div class="saldo"><span>Saldo a favor <small id="periodLabel"></small></span><strong id="balance">—</strong></div></header>
 
-<div class="toolbar"><button class="primary" id="add">+ Nueva sesión</button></div>
-<section><div class="filters"><label>Año<select id="year"></select></label><label>Mes<select id="month"><option value="all">Todos</option></select></label></div><div class="tablewrap"><table><thead><tr><th>Fecha</th><th>Tipo de tratamiento</th><th>Terapeuta</th><th>Costo real</th><th>Pagado</th><th>Usuario</th><th>Compensation</th><th>Dif.</th><th>Acumulado a favor</th><th></th></tr></thead><tbody id="rows"></tbody></table></div><div class="mobile-list" id="mobile"></div></section>
+<div class="toolbar"><button class="primary" id="add">+ Nueva sesión</button><button id="viewList" class="primary">Registro completo</button><button id="viewMonth">Vista mensual · Hispanidad</button></div>
+<section id="mainSection"><div class="filters"><label>Año<select id="year"></select></label><label>Mes<select id="month"><option value="all">Todos</option></select></label></div><div class="tablewrap"><table><thead><tr><th>Fecha</th><th>Tipo de tratamiento</th><th>Terapeuta</th><th>Costo real</th><th>Pagado</th><th>Usuario</th><th>Compensation</th><th>Dif.</th><th>Acumulado a favor</th><th></th></tr></thead><tbody id="rows"></tbody></table></div><div class="mobile-list" id="mobile"></div></section><section id="monthSection" class="hidden"><div class="month-head"><div><h2>Resumen mensual · Terapias Cary</h2><div id="monthPeriod"></div></div><div class="month-balance">Saldo acumulado: <strong id="monthBalance"></strong></div></div><div class="month-controls"><label>Año<select id="monthYear"></select></label><label>Mes<select id="monthMonth"></select></label><button id="monthPrint">Imprimir / PDF</button></div><div class="month-tablewrap"><table class="month-table"><thead><tr><th>Fecha</th><th>Tratamiento</th><th>Terapeuta</th><th>Valor</th><th>Pagado</th><th>Usuario</th><th>Compensación</th><th>Diferencia</th><th>Saldo</th></tr></thead><tbody id="monthRows"></tbody></table></div><div class="month-summary" id="monthSummary"></div></section>
 <details class="footer-tools"><summary>Copias de seguridad y exportación</summary><div class="toolbar"><button id="export">Guardar copia JSON</button><button id="import">Importar copia JSON</button><button id="csv">Exportar Excel (CSV)</button><button id="print">Imprimir</button><button id="reset">Restaurar datos originales</button><input id="file" type="file" accept=".json" hidden></div></details>
-</main><div class="modal" id="modal"><div class="dialog"><h2 id="formTitle">Nueva sesión</h2><form id="form"><div class="fields"><label>Fecha<input type="date" id="fdate" required></label><label>Movimiento<select id="fmode"><option value="normal">Sesión Cary</option><option value="comp">Compensación de saldo</option><option value="cancel">Cancelada</option></select></label><label>Tratamiento<select id="ftipo"><option>Physio</option><option>Occupation</option><option>Otro</option></select></label><label>Terapeuta<input id="fterapeuta" list="terapeutas" placeholder="Nombre" required><datalist id="terapeutas"><option>Rocio</option><option>Carolina</option><option>Susana</option><option>Alonso</option></datalist></label><label id="costLabel">Valor de la sesión<select id="fcosto"><option value="48">48 €</option><option value="65">65 €</option></select></label><label id="userLabel" class="hidden">Utilizada por<select id="fusuario"><option value="CQ">CQ – Cary</option><option value="AK">AK – Alfred</option></select></label><label id="compLabel" class="hidden">Valor compensado (€)<input id="fcomp" type="number" min="0" step="0.01" value="48"></label></div><div class="actions"><button type="button" id="close">Cancelar</button><button type="submit" class="primary">Guardar</button></div></form></div></div>
+</main><div class="modal" id="modal"><div class="dialog"><h2 id="formTitle">Nueva sesión</h2><form id="form"><div class="fields"><label>Fecha<input type="date" id="fdate" required></label><label>Movimiento<select id="fmode"><option value="normal">Sesión Cary</option><option value="comp">Compensación de saldo</option><option value="cancel">Cancelada</option></select></label><label>Tratamiento<select id="ftipo"><option>Physio</option><option>Occupation</option><option>Otro</option></select></label><label>Terapeuta<input id="fterapeuta" list="terapeutas" placeholder="Nombre" required><datalist id="terapeutas"><option>Rocio</option><option>Carolina</option><option>Susana</option><option>Alonso</option></datalist></label><label id="costLabel">Valor de la sesión<select id="fcosto"><option value="48">48 €</option><option value="65">65 €</option></select></label><label id="userLabel" class="hidden">Utilizada por<select id="fusuario"><option value="CQ">CQ – Cary</option><option value="AK">AK – Alfred</option></select></label><label id="compLabel" class="hidden">Valor compensado (€)<input id="fcomp" type="number" min="0" step="0.01" value="48"></label></div><div class="actions"><button type="button" id="close">Cancelar</button><button type="button" id="deleteEntry" style="color:#a32626;margin-right:auto" class="hidden">Eliminar</button><button type="submit" class="primary">Guardar</button></div></form></div></div>
 <script>const ORIGINAL=[{"id": "excel-3", "date": "2026-10-02", "tipo": "cancelado", "terapeuta": "Rocio", "costo": 0.0, "pagado": 0.0, "usuario": "", "comp": 0.0, "orden": 3}, {"id": "excel-4", "date": "2026-10-06", "tipo": "Occupation", "terapeuta": "Susana", "costo": 65.0, "pagado": 65.0, "usuario": "", "comp": 0.0, "orden": 4}, {"id": "excel-5", "date": "2026-10-09", "tipo": "Physio", "terapeuta": "Carolina", "costo": 48.0, "pagado": 65.0, "usuario": "", "comp": 0.0, "orden": 5}, {"id": "excel-6", "date": "2026-10-13", "tipo": "Occupation", "terapeuta": "Carolina", "costo": 48.0, "pagado": 65.0, "usuario": "", "comp": 0.0, "orden": 6}, {"id": "excel-7", "date": "2026-10-16", "tipo": "Physio", "terapeuta": "Rocio", "costo": 48.0, "pagado": 65.0, "usuario": "", "comp": 0.0, "orden": 7}, {"id": "excel-8", "date": "2026-10-20", "tipo": "supensido", "terapeuta": "Carolina", "costo": 0.0, "pagado": 0.0, "usuario": "", "comp": 0.0, "orden": 8}, {"id": "excel-9", "date": "2026-10-23", "tipo": "Physio", "terapeuta": "Rocio", "costo": 48.0, "pagado": 65.0, "usuario": "", "comp": 0.0, "orden": 9}, {"id": "excel-10", "date": "2026-10-27", "tipo": "Occupation", "terapeuta": "Susana", "costo": 65.0, "pagado": 65.0, "usuario": "", "comp": 0.0, "orden": 10}, {"id": "excel-11", "date": "2026-10-30", "tipo": "Physio", "terapeuta": "Carolina", "costo": 48.0, "pagado": 65.0, "usuario": "", "comp": 0.0, "orden": 11}, {"id": "excel-12", "date": "2026-11-03", "tipo": "Occupation", "terapeuta": "Susana", "costo": 65.0, "pagado": 65.0, "usuario": "", "comp": 0.0, "orden": 12}, {"id": "excel-13", "date": "2026-11-06", "tipo": "Physio", "terapeuta": "Rocio", "costo": 48.0, "pagado": 65.0, "usuario": "", "comp": 0.0, "orden": 13}, {"id": "excel-14", "date": "2026-11-10", "tipo": "Occupation", "terapeuta": "Carolina", "costo": 48.0, "pagado": 65.0, "usuario": "", "comp": 0.0, "orden": 14}, {"id": "excel-15", "date": "2026-11-13", "tipo": "Physio", "terapeuta": "Carolina", "costo": 48.0, "pagado": 65.0, "usuario": "", "comp": 0.0, "orden": 15}, {"id": "excel-16", "date": "2026-11-17", "tipo": "Occupation", "terapeuta": "Susana", "costo": 65.0, "pagado": 65.0, "usuario": "", "comp": 0.0, "orden": 16}, {"id": "excel-17", "date": "2026-11-20", "tipo": "Physio", "terapeuta": "Rocio", "costo": 48.0, "pagado": 65.0, "usuario": "", "comp": 0.0, "orden": 17}, {"id": "excel-18", "date": "2026-11-24", "tipo": "Occupation", "terapeuta": "Carolina", "costo": 48.0, "pagado": 65.0, "usuario": "", "comp": 0.0, "orden": 18}, {"id": "excel-19", "date": "2026-11-27", "tipo": "Physio", "terapeuta": "Carolina", "costo": 48.0, "pagado": 65.0, "usuario": "", "comp": 0.0, "orden": 19}, {"id": "excel-20", "date": "2026-11-18", "tipo": "Physio", "terapeuta": "Rocio", "costo": 0.0, "pagado": 0.0, "usuario": "CQ", "comp": 48.0, "orden": 20}, {"id": "excel-21", "date": "2026-11-19", "tipo": "Physio", "terapeuta": "Alonso", "costo": 0.0, "pagado": 0.0, "usuario": "AK", "comp": 48.0, "orden": 21}];
 const KEY='terapias_cary_v6';const OLD='terapias_cary_v5_registros';const $=id=>document.getElementById(id);const money=n=>Math.round((Number(n)||0)*100)/100;const EUR=n=>money(n).toLocaleString('es-ES',{minimumFractionDigits:2,maximumFractionDigits:2})+' €';const esc=s=>String(s??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));const clone=x=>JSON.parse(JSON.stringify(x));let data;try{const saved=JSON.parse(localStorage.getItem(KEY));const old=JSON.parse(localStorage.getItem(OLD));data=Array.isArray(saved)?saved:Array.isArray(old)?old:clone(ORIGINAL)}catch(e){data=clone(ORIGINAL)}let editId=null;function delta(x){return money((+x.pagado||0)-(+x.costo||0)-(+x.comp||0))}function ordered(){return [...data].sort((a,b)=>a.date.localeCompare(b.date)||(a.orden||0)-(b.orden||0))}function dateText(s){let a=s.split('-');return a[2]+'.'+a[1]+'.'+a[0]}function persist(){try{localStorage.setItem(KEY,JSON.stringify(data))}catch(e){alert('No se han podido guardar los datos. Exporte una copia.')}render()}
 function render(){let y=$('year').value,m=$('month').value;let years=[...new Set([...data.map(x=>x.date.slice(0,4)),String(new Date().getFullYear())])].sort();$('year').innerHTML=years.map(v=>`<option value="${v}">${v}</option>`).join('');$('year').value=years.includes(y)?y:String(new Date().getFullYear());$('month').innerHTML='<option value="all">Todos</option>'+Array.from({length:12},(_,i)=>{let n=String(i+1).padStart(2,'0');return `<option value="${n}">${new Date(2026,i,1).toLocaleString('es-ES',{month:'long'})}</option>`}).join('');$('month').value=m||String(new Date().getMonth()+1).padStart(2,'0');let running=0,balances={};for(const x of ordered()){running=money(running+delta(x));balances[x.id]=running}let selected=ordered().filter(x=>x.date.startsWith($('year').value)&&($('month').value==='all'||x.date.slice(5,7)===$('month').value)).reverse();let last=selected.at(-1);let end=$('month').value==='all'?$('year').value+'-12-31':$('year').value+'-'+$('month').value+'-'+String(new Date(Number($('year').value),Number($('month').value),0).getDate()).padStart(2,'0');let balance=money(ordered().filter(x=>x.date<=end).reduce((a,x)=>a+delta(x),0));$('balance').textContent=EUR(balance);$('periodLabel').textContent=$('month').value==='all'?'· '+$('year').value:'· '+$('month').selectedOptions[0].text+' '+$('year').value;
 $('rows').innerHTML=selected.map(x=>{let d=delta(x);return `<tr><td>${dateText(x.date)}</td><td>${esc(x.tipo)}</td><td>${esc(x.terapeuta)}</td><td class="num">${x.costo?EUR(x.costo):''}</td><td class="num">${x.pagado?EUR(x.pagado):''}</td><td>${esc(x.usuario)}</td><td class="num">${x.comp?EUR(x.comp):''}</td><td class="num ${d>0?'plus':d<0?'minus':''}">${EUR(d)}</td><td class="num balance">${EUR(balances[x.id])}</td><td><button class="small" data-edit="${esc(x.id)}">Editar</button></td></tr>`}).join('')||'<tr><td colspan="10">Sin sesiones</td></tr>';
 $('mobile').innerHTML=selected.map(x=>{let d=delta(x);return `<div class="entry"><div class="entry-top"><span class="${d>0?'plus':d<0?'minus':''}">${d>0?'+':''}${EUR(d)}</span><span class="balance">Saldo: ${EUR(balances[x.id])}</span></div><small>${esc(x.terapeuta)}${x.comp?' · Compensación '+esc(x.usuario):''}${!x.comp&&x.pagado?' · '+EUR(x.costo)+' / 65 €':''}</small><div class="entry-bottom"><span>${dateText(x.date)} · ${esc(x.tipo)}</span><button class="small" data-edit="${esc(x.id)}">Editar</button></div></div>`}).join('')||'<div class="note">Sin sesiones</div>'}
 function toggle(){let mode=$('fmode').value;$('costLabel').classList.toggle('hidden',mode!=='normal');$('userLabel').classList.toggle('hidden',mode!=='comp');$('compLabel').classList.toggle('hidden',mode!=='comp')}
-function openForm(id){editId=id||null;let x=id?data.find(v=>v.id===id):null;$('formTitle').textContent=x?'Editar sesión':'Nueva sesión';$('fdate').value=x?.date||[new Date().getFullYear(),String(new Date().getMonth()+1).padStart(2,'0'),String(new Date().getDate()).padStart(2,'0')].join('-');$('fmode').value=x?(x.comp?'comp':(!x.pagado&&!x.costo?'cancel':'normal')):'normal';$('ftipo').value=['Physio','Occupation'].includes(x?.tipo)?x.tipo:'Physio';$('fterapeuta').value=x?.terapeuta||'';$('fcosto').value=x?.costo===65?'65':'48';$('fusuario').value=x?.usuario==='AK'?'AK':'CQ';$('fcomp').value=x?.comp||48;toggle();$('modal').classList.add('show')}
-$('add').onclick=()=>openForm();$('close').onclick=()=>$('modal').classList.remove('show');$('modal').onclick=e=>{if(e.target===$('modal'))$('modal').classList.remove('show')};$('fmode').onchange=toggle;$('form').onsubmit=e=>{e.preventDefault();let mode=$('fmode').value;let x={id:editId||'new-'+Date.now(),date:$('fdate').value,tipo:mode==='cancel'?'cancelado':$('ftipo').value,terapeuta:$('fterapeuta').value.trim(),costo:mode==='normal'?Number($('fcosto').value):0,pagado:mode==='normal'?65:0,usuario:mode==='comp'?$('fusuario').value:'',comp:mode==='comp'?money($('fcomp').value):0,orden:editId?(data.find(v=>v.id===editId)?.orden||0):Math.max(21,...data.map(v=>v.orden||0))+1};if(editId)data=data.map(v=>v.id===editId?x:v);else data.push(x);$('modal').classList.remove('show');persist()};$('rows').onclick=$('mobile').onclick=e=>{let b=e.target.closest('[data-edit]');if(b)openForm(b.dataset.edit)};['year','month'].forEach(id=>$(id).onchange=render);
-function download(name,content,type){let u=URL.createObjectURL(new Blob([content],{type})),a=document.createElement('a');a.href=u;a.download=name;a.click();setTimeout(()=>URL.revokeObjectURL(u),1500)}$('export').onclick=()=>download('terapias_cary_v10.json',JSON.stringify(data,null,2),'application/json');$('import').onclick=()=>$('file').click();$('file').onchange=async e=>{let f=e.target.files[0];if(!f)return;try{let a=JSON.parse(await f.text());if(!Array.isArray(a)||!a.every(x=>x.id&&x.date))throw Error('Formato incorrecto');if(confirm('¿Sustituir los datos actuales?')){data=a;persist()}}catch(err){alert('Error: '+err.message)}e.target.value=''};$('reset').onclick=()=>{if(confirm('¿Restaurar los 19 registros originales? Se perderán los cambios no guardados en una copia.')){data=clone(ORIGINAL);persist()}};$('print').onclick=()=>window.print();$('csv').onclick=()=>{let rows=[['Fecha','Tipo de tratamiento','Terapeuta','Costo real','Pagado','Usuario','Compensation','Dif.','Acumulado a favor']];let sum=0;for(let x of ordered()){sum=money(sum+delta(x));rows.push([x.date,x.tipo,x.terapeuta,x.costo,x.pagado,x.usuario,x.comp,delta(x),sum])}download('terapias_cary_v10.csv','\ufeff'+rows.map(r=>r.map(v=>'"'+String(v).replaceAll('"','""')+'"').join(';')).join('\r\n'),'text/csv;charset=utf-8')};$('year').value=String(new Date().getFullYear());$('month').value=String(new Date().getMonth()+1).padStart(2,'0');render();</script><script>if("serviceWorker" in navigator && location.protocol.startsWith("http")){navigator.serviceWorker.register("./sw.js").catch(()=>{});}</script><script>
+function openForm(id){editId=id||null;let x=id?data.find(v=>v.id===id):null;$('formTitle').textContent=x?'Editar sesión':'Nueva sesión';$('fdate').value=x?.date||[new Date().getFullYear(),String(new Date().getMonth()+1).padStart(2,'0'),String(new Date().getDate()).padStart(2,'0')].join('-');$('fmode').value=x?(x.comp?'comp':(!x.pagado&&!x.costo?'cancel':'normal')):'normal';$('ftipo').value=['Physio','Occupation'].includes(x?.tipo)?x.tipo:'Physio';$('fterapeuta').value=x?.terapeuta||'';$('fcosto').value=x?.costo===65?'65':'48';$('fusuario').value=x?.usuario==='AK'?'AK':'CQ';$('fcomp').value=x?.comp||48;toggle();$('deleteEntry').classList.toggle('hidden',!x);$('modal').classList.add('show')}
+$('deleteEntry').onclick=()=>{if(!editId)return;if(!confirm('¿Eliminar esta sesión? El cambio también se aplicará en los otros dispositivos.'))return;const id=editId;data=data.filter(x=>x.id!==id);$('modal').classList.remove('show');persist();};$('add').onclick=()=>openForm();$('close').onclick=()=>$('modal').classList.remove('show');$('modal').onclick=e=>{if(e.target===$('modal'))$('modal').classList.remove('show')};$('fmode').onchange=toggle;$('form').onsubmit=e=>{e.preventDefault();let mode=$('fmode').value;let x={id:editId||'new-'+Date.now(),date:$('fdate').value,tipo:mode==='cancel'?'cancelado':$('ftipo').value,terapeuta:$('fterapeuta').value.trim(),costo:mode==='normal'?Number($('fcosto').value):0,pagado:mode==='normal'?65:0,usuario:mode==='comp'?$('fusuario').value:'',comp:mode==='comp'?money($('fcomp').value):0,orden:editId?(data.find(v=>v.id===editId)?.orden||0):Math.max(21,...data.map(v=>v.orden||0))+1};if(editId)data=data.map(v=>v.id===editId?x:v);else data.push(x);$('modal').classList.remove('show');persist()};$('rows').onclick=$('mobile').onclick=e=>{let b=e.target.closest('[data-edit]');if(b)openForm(b.dataset.edit)};['year','month'].forEach(id=>$(id).onchange=render);
+function download(name,content,type){let u=URL.createObjectURL(new Blob([content],{type})),a=document.createElement('a');a.href=u;a.download=name;a.click();setTimeout(()=>URL.revokeObjectURL(u),1500)}$('export').onclick=()=>download('terapias_cary_v13.json',JSON.stringify(data,null,2),'application/json');$('import').onclick=()=>$('file').click();$('file').onchange=async e=>{let f=e.target.files[0];if(!f)return;try{let a=JSON.parse(await f.text());if(!Array.isArray(a)||!a.every(x=>x.id&&x.date))throw Error('Formato incorrecto');if(confirm('¿Sustituir los datos actuales?')){data=a;persist()}}catch(err){alert('Error: '+err.message)}e.target.value=''};$('reset').onclick=()=>{if(confirm('¿Restaurar los 19 registros originales? Se perderán los cambios no guardados en una copia.')){data=clone(ORIGINAL);persist()}};$('print').onclick=()=>window.print();$('csv').onclick=()=>{let rows=[['Fecha','Tipo de tratamiento','Terapeuta','Costo real','Pagado','Usuario','Compensation','Dif.','Acumulado a favor']];let sum=0;for(let x of ordered()){sum=money(sum+delta(x));rows.push([x.date,x.tipo,x.terapeuta,x.costo,x.pagado,x.usuario,x.comp,delta(x),sum])}download('terapias_cary_v13.csv','\ufeff'+rows.map(r=>r.map(v=>'"'+String(v).replaceAll('"','""')+'"').join(';')).join('\r\n'),'text/csv;charset=utf-8')};$('year').value=String(new Date().getFullYear());$('month').value=String(new Date().getMonth()+1).padStart(2,'0');render();</script><script>if("serviceWorker" in navigator && location.protocol.startsWith("http")){navigator.serviceWorker.register("./sw.js").catch(()=>{});}</script><script>
 (()=>{
 'use strict';
 const BASE='https://yvlwuybmoewmswdubifm.supabase.co';
 const table=BASE+'/rest/v1/terapias_registros';
 const get=id=>document.getElementById(id);
-const state={token:null,refresh:null,uid:null,busy:false,ready:false,dirty:false,writing:false};
-const status=(message)=>{get('syncstatus').textContent=message};
-get('sbkey').value=localStorage.getItem('terapias_sb_publishable')||'';
+const STORE='terapias_v13_session', PENDING='terapias_v13_pending';
+const state={token:null,refresh:null,uid:null,ready:false,busy:false,dirty:false};
+const status=t=>get('syncstatus').textContent=t;
+const savedKey=localStorage.getItem('terapias_sb_publishable')||'';
+get('sbkey').value=savedKey;
 get('sbemail').value=localStorage.getItem('terapias_sb_email')||'';
-get('sbSave').onclick=()=>{let k=get('sbkey').value.trim();if(!k.startsWith('sb_publishable_'))return status('Bitte einen gültigen Publishable Key eingeben.');localStorage.setItem('terapias_sb_publishable',k);status('Öffentlicher Schlüssel lokal gespeichert.')};
+get('sbRemember').checked=localStorage.getItem('terapias_v13_remember')==='yes';
+get('sbSave').onclick=()=>{let k=key();if(!k.startsWith('sb_publishable_'))return status('Bitte einen gültigen Publishable Key eingeben.');localStorage.setItem('terapias_sb_publishable',k);status('Öffentlicher Schlüssel lokal gespeichert.')};
 function key(){return get('sbkey').value.trim()}
-async function request(url,opts={}){
+function saveSession(){
+ localStorage.setItem('terapias_v13_remember',get('sbRemember').checked?'yes':'no');
+ if(get('sbRemember').checked&&state.refresh&&state.uid)localStorage.setItem(STORE,JSON.stringify({refresh:state.refresh,uid:state.uid}));
+ else localStorage.removeItem(STORE);
+}
+get('sbRemember').onchange=saveSession;
+async function request(url,opts={},retry=true){
  let headers={'apikey':key(),'Content-Type':'application/json',...(opts.headers||{})};
  if(state.token)headers.Authorization='Bearer '+state.token;
- let res=await fetch(url,{...opts,headers});let raw=await res.text();let val;try{val=raw?JSON.parse(raw):null}catch{val=raw}
- if(!res.ok)throw Error((val&& (val.message||val.msg||val.error_description||val.error))||'HTTP '+res.status);
+ let res=await fetch(url,{...opts,headers});let raw=await res.text(),val;
+ try{val=raw?JSON.parse(raw):null}catch{val=raw}
+ if(res.status===401&&retry&&state.refresh){await refresh();return request(url,opts,false)}
+ if(!res.ok)throw Error((val&&(val.message||val.msg||val.error_description||val.error))||'HTTP '+res.status);
  return val;
 }
-async function login(){
- if(!key().startsWith('sb_publishable_'))throw Error('Publishable Key fehlt');
- let email=get('sbemail').value.trim(),password=get('sbpassword').value;
- if(!email||!password)throw Error('E-Mail und Passwort eingeben');
- let result=await request(BASE+'/auth/v1/token?grant_type=password',{method:'POST',body:JSON.stringify({email,password})});
- state.token=result.access_token;state.refresh=result.refresh_token;state.uid=result.user.id;state.ready=false;
- localStorage.setItem('terapias_sb_email',email);get('sbpassword').value='';
- status('Angemeldet. Cloud-Daten werden geprüft …');
- let cloud=await pullRows();
- if(cloud.length){status('Cloud enthält '+cloud.length+' Einträge. Bitte «Cloud-Daten laden» wählen; lokale Daten werden vorher gesichert.');}
- else status('Cloud ist leer. Bitte zuerst JSON-Sicherung erstellen und danach «Lokale Daten erstmals in Cloud übertragen» wählen.');
-}
 async function refresh(){
- if(!state.refresh)return;
- let result=await request(BASE+'/auth/v1/token?grant_type=refresh_token',{method:'POST',body:JSON.stringify({refresh_token:state.refresh})});
- state.token=result.access_token;state.refresh=result.refresh_token;
+ if(!state.refresh)throw Error('Keine gespeicherte Anmeldung');
+ const res=await fetch(BASE+'/auth/v1/token?grant_type=refresh_token',{method:'POST',headers:{'apikey':key(),'Content-Type':'application/json'},body:JSON.stringify({refresh_token:state.refresh})});
+ const result=await res.json();if(!res.ok)throw Error(result.error_description||result.msg||'Anmeldung abgelaufen');
+ state.token=result.access_token;state.refresh=result.refresh_token;state.uid=result.user.id;saveSession();
 }
 async function pullRows(){
  if(!state.token)throw Error('Bitte zuerst anmelden');
- let rows=await request(table+'?select=id,user_id,fecha,tipo,payload&order=fecha.asc',{method:'GET'});
+ const rows=await request(table+'?select=id,user_id,fecha,tipo,payload&order=fecha.asc',{method:'GET'});
  return rows.map(r=>r.payload).filter(x=>x&&x.id&&x.date);
 }
-function backup(){download('terapias_cary_v11_backup_'+new Date().toISOString().slice(0,10)+'.json',JSON.stringify(data,null,2),'application/json')}
-async function pull(){
- if(state.dirty)throw Error('Es gibt noch nicht gespeicherte lokale Änderungen. Bitte erst synchronisieren.');
- let cloud=await pullRows();
- if(!cloud.length){status('Cloud ist leer. Lokale Einträge wurden nicht verändert.');return}
- if(!confirm('Cloud-Daten ('+cloud.length+' Einträge) laden? Vorher wird automatisch eine lokale JSON-Sicherung heruntergeladen.'))return;
- backup();data=cloud;localStorage.setItem(KEY,JSON.stringify(data));state.ready=true;render();status('Cloud-Daten geladen ('+cloud.length+'). Synchronisierung aktiv.');
+function backup(){download('terapias_cary_v13_backup_'+new Date().toISOString().slice(0,10)+'.json',JSON.stringify(data,null,2),'application/json')}
+function pending(){try{return JSON.parse(localStorage.getItem(PENDING))||{}}catch{return {}}}
+function setPending(p){localStorage.setItem(PENDING,JSON.stringify(p));state.dirty=Object.keys(p).length>0}
+function queueChange(oldRows,newRows){
+ if(!state.ready)return;
+ const oldMap=new Map(oldRows.map(x=>[String(x.id),x]));const newMap=new Map(newRows.map(x=>[String(x.id),x]));
+ const p=pending();
+ for(const [id,x] of newMap){if(JSON.stringify(oldMap.get(id))!==JSON.stringify(x))p[id]={op:'upsert',row:x}}
+ for(const [id] of oldMap){if(!newMap.has(id))p[id]={op:'delete'}}
+ setPending(p);
 }
-async function push(initial=false){
- if(state.busy)return;
- if(!state.token)throw Error('Bitte zuerst anmelden');
+function setCloud(cloud){data=cloud;localStorage.setItem(KEY,JSON.stringify(data));render();renderMonth()}
+async function pull(silent=false){
+ if(state.dirty)throw Error('Lokale Änderungen noch nicht synchronisiert. Bitte zuerst «Jetzt synchronisieren» wählen.');
+ const cloud=await pullRows();
+ if(!cloud.length){status('Cloud ist leer. Lokale Daten wurden nicht verändert.');return}
+ if(!silent){if(!confirm('Cloud-Daten ('+cloud.length+' Einträge) laden? Eine JSON-Sicherung wird zuvor heruntergeladen.'))return;backup()}
+ setCloud(cloud);state.ready=true;status('Cloud-Daten geladen: '+cloud.length+' Einträge. Synchronisierung aktiv.');
+}
+async function login(){
+ if(!key().startsWith('sb_publishable_'))throw Error('Publishable Key fehlt');
+ const email=get('sbemail').value.trim(),password=get('sbpassword').value;
+ if(!email||!password)throw Error('E-Mail und Passwort eingeben');
+ const r=await request(BASE+'/auth/v1/token?grant_type=password',{method:'POST',body:JSON.stringify({email,password})});
+ state.token=r.access_token;state.refresh=r.refresh_token;state.uid=r.user.id;
+ localStorage.setItem('terapias_sb_email',email);get('sbpassword').value='';saveSession();
+ await afterLogin();
+}
+async function afterLogin(){
+ const cloud=await pullRows();
+ if(cloud.length){
+  if(Object.keys(pending()).length){state.ready=true;state.dirty=true;status('Angemeldet. Ausstehende lokale Änderungen gefunden – bitte «Jetzt synchronisieren» wählen.');}
+  else {setCloud(cloud);state.ready=true;status('Verbunden · '+cloud.length+' Cloud-Einträge geladen. Automatische Synchronisierung aktiv.');}
+ }else status('Cloud ist leer. Nur beim allerersten Import lokale Daten übertragen.');
+}
+async function initialUpload(){
+ if(state.busy)return;if(!state.token)throw Error('Bitte zuerst anmelden');
  state.busy=true;
  try{
- let cloud=await pullRows();
- if(initial){
- if(cloud.length)throw Error('Cloud ist nicht leer. Kein Erstimport möglich; bitte zuerst Cloud-Daten laden.');
- if(!confirm('Wirklich '+data.length+' lokale Einträge erstmals in die leere Cloud übertragen? Bitte vorher JSON-Sicherung erstellen.'))return;
- }else if(!state.ready)throw Error('Bitte zuerst Cloud-Daten laden oder Erstimport durchführen.');
- let payload=data.map(x=>({id:String(x.id),user_id:state.uid,fecha:x.date,tipo:x.tipo,payload:x}));
- if(payload.length)await request(table+'?on_conflict=id',{method:'POST',headers:{Prefer:'resolution=merge-duplicates,return=minimal'},body:JSON.stringify(payload)});
- // Never delete cloud rows automatically: avoid accidental loss across devices.
- state.dirty=false;state.ready=true;status('Cloud gespeichert: '+payload.length+' lokale Einträge.');
+  const cloud=await pullRows();if(cloud.length)throw Error('Cloud ist nicht leer. Kein Erstimport möglich.');
+  if(!confirm('Wirklich '+data.length+' lokale Einträge erstmals übertragen? Bitte vorher JSON-Sicherung erstellen.'))return;
+  const payload=data.map(x=>({id:String(x.id),user_id:state.uid,fecha:x.date,tipo:x.tipo,payload:x}));
+  if(payload.length)await request(table+'?on_conflict=id',{method:'POST',headers:{Prefer:'resolution=merge-duplicates,return=minimal'},body:JSON.stringify(payload)});
+  state.ready=true;setPending({});status('Erstimport abgeschlossen: '+payload.length+' Einträge.');
+ }finally{state.busy=false}
+}
+async function sync(){
+ if(!state.ready||!state.token)throw Error('Bitte zuerst anmelden und Cloud-Daten laden.');
+ if(state.busy)return;
+ state.busy=true;
+ try{
+  const changes=pending();const entries=Object.entries(changes);
+  if(entries.length){
+   // Per-row operations preserve other devices' unrelated edits. Deletes are explicit.
+   for(const [id,change] of entries){
+    if(change.op==='delete')await request(table+'?id=eq.'+encodeURIComponent(id),{method:'DELETE'});
+    else {const x=change.row;await request(table+'?on_conflict=id',{method:'POST',headers:{Prefer:'resolution=merge-duplicates,return=minimal'},body:JSON.stringify([{id:String(x.id),user_id:state.uid,fecha:x.date,tipo:x.tipo,payload:x}])})}
+    const current=pending();if(JSON.stringify(current[id])===JSON.stringify(change)){delete current[id];setPending(current)}
+   }
+  }
+  if(!Object.keys(pending()).length){const cloud=await pullRows();setCloud(cloud);status('Synchronisiert: '+cloud.length+' Einträge.');}
+  else status('Weitere lokale Änderungen warten auf Synchronisierung.');
  }finally{state.busy=false}
 }
 get('sbLogin').onclick=()=>login().catch(e=>status('Anmeldung: '+e.message));
-get('sbLogout').onclick=()=>{state.token=null;state.refresh=null;state.uid=null;state.ready=false;status('Abgemeldet. Lokale Daten bleiben erhalten.')};
+get('sbLogout').onclick=()=>{state.token=null;state.refresh=null;state.uid=null;state.ready=false;localStorage.removeItem(STORE);status('Abgemeldet. Lokale Daten bleiben erhalten.')};
 get('sbPull').onclick=()=>pull().catch(e=>status('Laden: '+e.message));
-get('sbUpload').onclick=()=>push(true).catch(e=>status('Erstimport: '+e.message));
+get('sbUpload').onclick=()=>initialUpload().catch(e=>status('Erstimport: '+e.message));
 get('sbSync').onclick=()=>sync().catch(e=>status('Synchronisierung: '+e.message));
 const originalPersist=persist;
-persist=function(){originalPersist();state.dirty=true;if(state.ready&&state.token){status('Änderung lokal gespeichert; Cloud wird aktualisiert …');sync().catch(e=>status('Cloud-Fehler: '+e.message+' (lokale Kopie vorhanden)'))}else status('Änderung lokal gespeichert; noch nicht mit Cloud verbunden.')};
-async function sync(){
- if(!state.ready||!state.token)throw Error('Erst anmelden und Cloud laden bzw. Erstimport durchführen.');
- if(state.busy)return;
- if(state.dirty){await push();return}
- let cloud=await pullRows();
- // For safety, never silently replace local data if remote count is smaller.
- if(cloud.length<data.length){status('Cloud enthält weniger Einträge als lokal. Bitte manuell prüfen.');return}
- if(JSON.stringify(cloud)!==JSON.stringify(data)){
- data=cloud;localStorage.setItem(KEY,JSON.stringify(data));render();status('Aktualisiert: '+cloud.length+' Cloud-Einträge.');
- }else status('Synchronisiert: '+cloud.length+' Einträge.');
-}
+persist=function(){
+ const oldRows=JSON.parse(localStorage.getItem(KEY)||'null')||[];
+ originalPersist();queueChange(oldRows,data);renderMonth();
+ if(state.ready&&state.token){status('Lokal gespeichert. Cloud wird aktualisiert …');sync().catch(e=>status('Cloud-Fehler: '+e.message+' · Änderung lokal vorgemerkt.'))}
+ else status('Lokal gespeichert. Nicht verbunden – Änderungen werden nicht in die Cloud übertragen.');
+};
 setInterval(()=>{if(state.token&&state.ready&&!state.busy)sync().catch(e=>status('Verbindungsfehler: '+e.message))},15000);
 setInterval(()=>{if(state.token&&state.refresh)refresh().catch(()=>status('Sitzung abgelaufen – bitte erneut anmelden.'))},45*60*1000);
+(async()=>{const session=localStorage.getItem(STORE);if(!session||!key())return;
+ try{const x=JSON.parse(session);state.refresh=x.refresh;state.uid=x.uid;await refresh();await afterLogin()}
+ catch(e){state.token=null;state.refresh=null;localStorage.removeItem(STORE);status('Gespeicherte Anmeldung abgelaufen. Bitte erneut anmelden.')}})();
 })();
+// Zweite Ansicht: vollständige Monatsübersicht, unabhängig von der mobilen Listenansicht.
+let activeView='list';
+function renderMonth(){
+ const yr=document.getElementById('monthYear'),mo=document.getElementById('monthMonth');
+ if(!yr||!mo)return;
+ const oldY=yr.value,oldM=mo.value;
+ const years=[...new Set([...data.map(x=>x.date.slice(0,4)),String(new Date().getFullYear())])].sort();
+ yr.innerHTML=years.map(y=>`<option value="${y}">${y}</option>`).join('');yr.value=years.includes(oldY)?oldY:String(new Date().getFullYear());
+ mo.innerHTML=Array.from({length:12},(_,i)=>`<option value="${String(i+1).padStart(2,'0')}">${new Date(2026,i,1).toLocaleString('es-ES',{month:'long'})}</option>`).join('');
+ mo.value=oldM||String(new Date().getMonth()+1).padStart(2,'0');
+ const month=yr.value+'-'+mo.value;
+ const sorted=ordered(), balances={};let running=0;
+ for(const x of sorted){running=money(running+delta(x));balances[x.id]=running}
+ const rows=sorted.filter(x=>x.date.startsWith(month));
+ const end=month+'-'+String(new Date(+yr.value,+mo.value,0).getDate()).padStart(2,'0');
+ const balance=money(sorted.filter(x=>x.date<=end).reduce((a,x)=>a+delta(x),0));
+ document.getElementById('monthPeriod').textContent=mo.selectedOptions[0].text+' '+yr.value;
+ document.getElementById('monthBalance').textContent=EUR(balance);
+ document.getElementById('monthRows').innerHTML=rows.map(x=>`<tr><td>${dateText(x.date)}</td><td>${esc(x.tipo)}</td><td>${esc(x.terapeuta)}</td><td class="num">${x.costo?EUR(x.costo):'—'}</td><td class="num">${x.pagado?EUR(x.pagado):'—'}</td><td>${esc(x.usuario)||'—'}</td><td class="num">${x.comp?EUR(x.comp):'—'}</td><td class="num">${EUR(delta(x))}</td><td class="num balance">${EUR(balances[x.id])}</td></tr>`).join('')||'<tr><td colspan="9">Sin sesiones</td></tr>';
+ document.getElementById('monthSummary').textContent=rows.length+' registros · Diferencia del mes: '+EUR(rows.reduce((a,x)=>a+delta(x),0))+' · Saldo acumulado: '+EUR(balance);
+}
+function setView(v){activeView=v;document.getElementById('mainSection').classList.toggle('hidden',v==='month');document.getElementById('monthSection').classList.toggle('hidden',v!=='month');document.getElementById('viewList').classList.toggle('primary',v==='list');document.getElementById('viewMonth').classList.toggle('primary',v==='month');renderMonth()}
+document.getElementById('viewList').onclick=()=>setView('list');document.getElementById('viewMonth').onclick=()=>setView('month');
+['monthYear','monthMonth'].forEach(id=>document.getElementById(id).onchange=renderMonth);
+document.getElementById('monthPrint').onclick=()=>window.print();
+renderMonth();
 </script></body></html>
